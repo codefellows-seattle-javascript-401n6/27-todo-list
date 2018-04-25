@@ -35,11 +35,11 @@ class Dashboard extends React.Component{
   }
 
   render() {
-    return <div>
+    return <main>
       <p>Welcome to your dashboard!</p>
       <CreateForm addNoteFunc={this.addNote}></CreateForm>
       <NoteList notes={this.state.notes} removeNote={this.removeNote} />
-    </div>
+    </main>
   }
 }
 

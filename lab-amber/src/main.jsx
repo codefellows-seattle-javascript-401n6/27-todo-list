@@ -10,11 +10,13 @@ import {
 import Landing from './components/landing.jsx';
 import Dashboard from './components/dashboard.jsx';
 
+import './style/main.scss';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Hello Title",
+      title: "My Notes",
     }
   }
 
