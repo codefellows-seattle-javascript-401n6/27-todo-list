@@ -7,9 +7,9 @@ class Todolist extends React.Component {
 
  render() {
    return <ul>
-       <li>Wash kiddo</li>
        <li>Feed kiddo</li>
-       <li>Play with kiddo</li>
+       <li>Wash kiddo</li>
+       <li>Put kiddo to bed</li>
      </ul>
  }
 }
