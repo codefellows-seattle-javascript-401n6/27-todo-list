@@ -1,16 +1,23 @@
 import React from 'react';
 
-class Todolist extends React.Component {
+import Item from './TodoItem.jsx';
+
+class TodoList extends React.Component {
  constructor(props) {
    super(props);
  }
+list() {
+    return this.props.items.map((item, index) => {
+        return <Item task={item.task} notes={item.notes}
+          key={index} index={index}
+          removeItem={this.props.removeItem}/>;
+      });
+}
 
  render() {
    return <ul>
-       <li>Feed kiddo</li>
-       <li>Wash kiddo</li>
-       <li>Put kiddo to bed</li>
+       {this.list()}
      </ul>
  }
 }
-export default Todolist;
+export default TodoList;

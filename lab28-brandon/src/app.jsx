@@ -8,7 +8,8 @@ import {
  } from 'react-router-dom'
 
 import Homepage from './components/homepage.jsx';
-import Todolist from './components/todolist.jsx';
+import Todolist from './components/Todos.jsx';
+import './style/main.scss';
 
 class App extends React.Component {
  constructor(props) {
@@ -24,12 +25,12 @@ class App extends React.Component {
       <nav>
         <ul>
           <li><Link to="/">Homepage</Link></li>
-          <li><Link to="/todolist">Todo-List</Link></li>
+          <li><Link to="/Todos">Todo-List</Link></li>
         </ul>
       </nav>
       <h1>{this.state.title}</h1>
       <Route exact path="/" component={Homepage} />
-      <Route path="/todolist" component={Todolist} />
+      <Route path="/Todos" component={Todolist} />
    </div>
    </Router>
  }
