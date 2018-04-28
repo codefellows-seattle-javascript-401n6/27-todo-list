@@ -10,8 +10,7 @@ class Landing extends React.Component {
 
   render() {
     return <div>
-      Dashboard
-      <Link to="/dashboard">Dashboard</Link>
+      <Link to="/dashboard">Welcome to the ToDo List Application!</Link>
     </div>
   }
 }

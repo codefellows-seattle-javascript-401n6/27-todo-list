@@ -3,25 +3,23 @@ import React from "react";
 class NoteItem extends React.Component {
   constructor(props) {
     super(props);
-  }
-  //   this.remove = this.remove.bind(this);
-  // }
 
-  // remove() {
-  //   this.props.removeNote(this.props.id);
-  // }
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  handleRemove(ev) {
+    return this.props.removeNote(this.props.note.index);
+  }
 
   render() {
     return <div>
-      NoteItem
       <h2>{this.props.note.title}</h2>
-      <p>{this.props.note.content}</p>
-      <button id={this.props.note.id} 
-      type='button' 
-      onClick={this.props.removeNote}>
-        Delete
+      <h3>{this.props.note.content}</h3>
+      <button
+        onClick={this.handleRemove}>
+        Remove
       </button>
-    </div>;
+    </div>
   }
 }
 

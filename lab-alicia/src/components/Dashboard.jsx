@@ -20,9 +20,9 @@ class Dashboard extends React.Component {
       this.setState({notes: this.state.notes});
     }
 
-  removeNote(ev) {
-    this.state.notes.push(note);
-    this.setState({notes: this.state.notes.id});
+  removeNote(index) {
+    this.state.notes.splice(index, 1);
+    this.setState({notes: this.state.notes});
   }
 
   render() {
