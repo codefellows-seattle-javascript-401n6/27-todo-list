@@ -16,27 +16,21 @@ class Dashboard extends React.Component {
   }
 
   addNote(note) {
-    this.setState = {
-      id: uuid.v1(),
-      editing: false,
-      completed: false,
-      content: '',
-      title: '',
+      this.state.notes.push(note);
+      this.setState({notes: this.state.notes});
     }
-  }
 
-  removeNote(note) {
+  removeNote(ev) {
     this.state.notes.push(note);
     this.setState({notes: this.state.notes.id});
   }
 
   render() {
     return <div>
-      Dashboard
       <div>
-        <NoteCreateForm addNote={this.addNote}
-        removeNote={this.removeNote}/>
-        <NoteList notes={this.state.notes} />
+        <NoteCreateForm addNote={this.addNote} />
+        <NoteList removeNote={this.removeNote} 
+        notes={this.state.notes} />
       </div>
     </div>;
   }

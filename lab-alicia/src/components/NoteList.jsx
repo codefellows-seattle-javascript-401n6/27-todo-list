@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 import NoteItem from './NoteItem.jsx';
 
@@ -18,11 +17,14 @@ class NoteList extends React.Component {
     return <div>
       NoteList
       <div>
-        <NoteItem />
+        <ul>
+          {this.list()}
+          <NoteItem
+            key={note.id}
+            removeNote={this.props.removeNote}
+            note={note} />
+        </ul>
       </div>
-      <ul>
-        {this.list()}
-      </ul>
     </div>
   }
 }

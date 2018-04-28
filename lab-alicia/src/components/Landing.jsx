@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 
-import NoteCreateForm from "./NoteCreateForm.jsx";
+import Dashboard from "./Dashboard.jsx";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -9,7 +9,10 @@ class Landing extends React.Component {
   }
 
   render() {
-    return <div>Landing<NoteCreateForm /><NoteList /></div>
+    return <div>
+      Dashboard
+      <Link to="/dashboard">Dashboard</Link>
+    </div>
   }
 }
 
