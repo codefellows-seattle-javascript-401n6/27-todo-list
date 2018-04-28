@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   mode: 'development',
-  entry: './src/main.jsx',
-  plugins: [new HtmlWebpackPlugin],
+  entry: './src/app.jsx',
+  plugins: [new HtmlWebpackPlugin({template: __dirname + '/src/index.html'})],
   module: {
     rules: [
       {

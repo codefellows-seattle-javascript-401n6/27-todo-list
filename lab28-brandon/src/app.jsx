@@ -1,5 +1,8 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Homepage from './components/homepage.jsx';
+import Todolist from './components/todolist.jsx';
 
 class App extends React.Component {
  constructor(props) {
@@ -12,6 +15,8 @@ class App extends React.Component {
  render() {
    return <div>
       <h1>{this.state.title}</h1>
+      <Homepage />
+      <Todolist />
    </div>;
  }
 };

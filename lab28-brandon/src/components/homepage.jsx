@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 class Homepage extends React.Component {
  constructor(props) {
@@ -11,3 +11,4 @@ class Homepage extends React.Component {
    </div>;
  }
 }
+export default Homepage;
