@@ -2,9 +2,9 @@
 const HtmlPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry:'./src/app.js',
+  entry:'./src/app.jsx',
   mode:'development',
-  plugins: [new HtmlPlugin()],
+  plugins: [new HtmlPlugin({template: __dirname + '/src/index.html'})],
   module:{
     rules:[
       {test: /\.jsx?$/, loader: ['babel-loader'], exclude:/node_modules/},

@@ -1,7 +1,8 @@
 'use strict';
-const React = require('react');
-const ReactDom = require('react-dom');
-
+import React from 'react';
+import ReactDom from 'react-dom';
+import Landing from './component/Landing.jsx';
+import ToDoList from './component/ToDoList.jsx';
 
 class App extends React.Component{
   constructor(props){
@@ -15,6 +16,8 @@ class App extends React.Component{
       <h1>
         {this.state.title}
       </h1>
+      <Landing />
+      <ToDoList />
     </div>
   }
 }
