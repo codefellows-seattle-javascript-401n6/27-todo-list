@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid';
 
 import TodoForm from './TodoForm.jsx';
 import TodoUpdateForm from './TodoUpdateForm.jsx';
@@ -11,21 +12,21 @@ class TodoPage extends React.Component {
     this.state = {
       todo: [
         {
-          id: 1,
+          id: uuid(),
           title: 'Chores',
           content: 'Mow the lawn',
           editing: false,
           completed: false
         },
         {
-          id: 2,
+          id: uuid(),
           title: 'Grocery Shopping',
           content: 'Milk',
           editing: false,
           completed: false
         },
         {
-          id: 3,
+          id: uuid(),
           title: 'Pay Bills',
           content: 'Electric',
           editing: false,
@@ -49,11 +50,10 @@ class TodoPage extends React.Component {
     this.setState({ todo: this.state.todo });
   }
 
-  updateTodo(editedNote) {
-    console.log('todoPage id= ', id);
-    // map Over todo's
-    // if id is = to passed in id
-    // update that note (note = editedNote)
+  updateTodo(updatedItem, index) {
+    let newArray = [...this.state.Todo];
+    newArray[index] = updatedItem;
+    this.setState({todo: newArray});
   }
 
   render() {

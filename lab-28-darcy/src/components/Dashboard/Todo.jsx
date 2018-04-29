@@ -5,8 +5,13 @@ import { Link } from 'react-router-dom';
 class Todo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isEditing: false,
+    }
     this.remove = this.remove.bind(this);
     this.update = this.update.bind(this);
+    this.toggleUpdate = this.toggleUpdate.bind(this);
+    this.finishUpdate = this.finishUpdate.bind(this);
   }
 
   remove() {
@@ -15,12 +20,28 @@ class Todo extends React.Component {
   }
 
   update() {
-    console.log('id= ', this.props.todo.id);
-    this.props.updateTodo(this.props.todo.id)
+    console.log('UPDATE this.props.id', this.props.id);
+    this.props.updateTodo(this.props.id)
+  }
+
+  toggleUpdate() {
+    this.setState({isEditing: !this.state.isEditing});
+  }
+
+
+  finishUpdate(updatedItem) {
+    this.setState({isEditing: false});
+    this.props.updateTodo(updatedItem, this.props.id);
   }
 
   render() {
-    return <div>
+    if (this.state.isEditing) {
+      return <TodoUpdateForm title={this.props.title}
+        content={this.props.content}
+        finishUpdate={this.finishUpdate}
+        toggleUpdate={this.toggleUpdate} />
+    }
+    return <div onClick={this.toggleUpdate}>
       <ul>
         <li id="list-title">
           <Link to={"/todo/" + this.props.content}>
@@ -38,4 +59,3 @@ class Todo extends React.Component {
 }
 
 export default Todo;
-
