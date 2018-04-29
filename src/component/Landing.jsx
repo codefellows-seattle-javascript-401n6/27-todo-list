@@ -1,17 +1,19 @@
 'use strict';
 import React from 'react';
+import Note from './note.jsx';
 
 
 class Landinig extends React.Component{
   constructor(props){
     super(props);
-  
+ 
   }
   render(){
     return <div>
-      <h1>
-      Welcome to your ToDoList!
-      </h1>
+      <h3>
+      I am so tired...
+      </h3>
+    
     </div>
   }
 }
