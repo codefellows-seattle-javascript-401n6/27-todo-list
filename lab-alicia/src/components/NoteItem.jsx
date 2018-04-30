@@ -8,7 +8,7 @@ class NoteItem extends React.Component {
   }
 
   handleRemove(ev) {
-    return this.props.removeNote(this.props.note.index);
+    return this.props.removeNote(this.props.note.id);
   }
 
   render() {

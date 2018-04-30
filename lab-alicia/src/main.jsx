@@ -13,28 +13,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    title: '',
-    content: ''
+      title: '',
+      content: ''
     }
   }
 
   render() {
     return <Router>
-    <div> 
-      <nav>
-        <h1>ToDo List</h1>
+      <div>
+        <nav>
+          <h1>ToDo List</h1>
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
-      </nav>
-      <div id="main-content">
-        <h1>{this.state.title}</h1>
-          <Route exact path="/" component={Landing}/>
-          <Route path="/dashboard" component={Dashboard}/>
+        </nav>
+        <div id="main-content">
+          <h1>{this.state.title}</h1>
+          <Route exact path="/" component={Landing} />
+          <Route path="/dashboard" component={Dashboard} />
+        </div>
       </div>
-    </div>
-  </Router>
+    </Router>
   }
 };
 

@@ -17,7 +17,8 @@ class NoteCreateForm extends React.Component {
   }
 
   handleChange(ev) {
-    this.setState({[ev.target.name]: ev.target.value,
+    this.setState({
+      [ev.target.name]: ev.target.value,
       id: uuidv4()
     })
   }
@@ -28,21 +29,22 @@ class NoteCreateForm extends React.Component {
   }
 
   render() {
-    return <form 
+    return <form
       onSubmit={this.handleSubmit}>
-        <input
+      <input
         type='text'
         name='title'
         placeholder='Title'
         onChange={this.handleChange}
-        />
-        <input
+      />
+      <input
         type='text'
         name='content'
         placeholder='Content'
         onChange={this.handleChange}
-        />
-      <button type='submit' value='Add Note'>Create Note</button>
+      />
+      <button type='submit'
+        value='Add Note'>Create Note</button>
     </form>
   }
 }
