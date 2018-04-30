@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 
 
 class HomePage extends React.Component {
@@ -7,8 +8,9 @@ class HomePage extends React.Component {
       }
   render() {
     return <div> 
-      <h1>Welcome to my Homepage</h1>
-      </div>
+    <h2 className="page-description">This is an example ToDo App built with reactjs.
+    </h2>
+    </div>
   }
 }
 

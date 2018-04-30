@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import '../style/main.scss';
 
 import HomePage from './components/homepage.jsx';
 import ToDoList from './components/todo-list.jsx';
+import TodoForm from './components/todoForm.jsx';
+import Dashboard from './components/dashboard.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: 'My Routed React App'}
+    this.state = {
+      title: 'My Routed React App',
+      description: 'This has been built with Reactjs'
+  }
   }
   render() {
     return <Router>
@@ -16,12 +22,12 @@ class App extends React.Component {
         <nav>
           <ul>
             <li><Link to="/">HomePage</Link></li>
-            <li><Link to="/todolist">ToDoList</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
         </nav>
       <h1>{this.state.title}</h1>
-      <Route path exact ="/" component={HomePage} />
-      <Route path="/todolist" component={ToDoList} /> 
+      <Route exact path="/" component={HomePage} />
+      <Route path="/dashboard" component={Dashboard} /> 
       </div>
       </Router>
   }
