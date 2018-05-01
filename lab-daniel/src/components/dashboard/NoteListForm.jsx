@@ -10,7 +10,7 @@ class NoteListForm extends React.Component {
 
     listGoals() {
         return this.props.notes.map((note) => {
-          return <NoteItem note={note} key={note.id}/>
+          return <NoteItem note={note} key={note.id} removeGoal={this.props.removeGoal}/>
         });
       }
     render(){

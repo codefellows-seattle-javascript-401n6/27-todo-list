@@ -12,7 +12,8 @@ class Dashboard extends React.Component {
         this.state = {
             notes: []
         }
-        this.addGoal = this.addGoal.bind(this)
+        this.addGoal = this.addGoal.bind(this);
+        this.removeGoal = this.removeGoal.bind(this);
     }
 
     addGoal(noteObj) {
@@ -21,12 +22,18 @@ class Dashboard extends React.Component {
         this.setState({notes: newArray});
         console.log('new note', this.state.notes);
       }
-
+    
+    removeGoal(id){
+        this.state.notes = this.state.notes.filter((note) => {
+            return note.id !== id;
+        })
+        this.setState({ note: this.state.note })
+    }
     render() {
         return (
             <main>
             <NoteCreateForm newGoalFunc={this.addGoal}></NoteCreateForm>
-            <NoteListForm notes={this.state.notes}></NoteListForm>
+            <NoteListForm notes={this.state.notes} removeGoal={this.removeGoal}></NoteListForm>
             </main>
         )
     }
