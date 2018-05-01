@@ -7,7 +7,8 @@ import {
     Link
 } from 'react-router-dom';
 
-import Landing from './components/landing.jsx'
+import Landing from './components/Landing.jsx'
+import Dashboard from './components/dashboard/Dashboard.jsx';
 
 class App extends React.Component {
     constructor(props){
@@ -28,6 +29,7 @@ class App extends React.Component {
                 </nav>
                 <h1>{this.state.header}</h1>
                 <Route exact path="/" component={Landing} />
+                <Route path="/dashboard" component={Dashboard} />
             </div>
         </Router>
         
