@@ -28,7 +28,7 @@ class App extends React.Component {
             <li><Link to="/todo">To-Do List</Link></li>
           </ul>
         </nav>
-        <h1>{this.state.title}</h1>
+        <h1 id="title">{this.state.title}</h1>
         <Route exact path="/" component={Homepage} />
         <Route path="/todo" component={TodoPage} />
       </div>

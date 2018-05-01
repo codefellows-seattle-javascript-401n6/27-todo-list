@@ -1,48 +1,38 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 
 class TodoUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      content: '',
+      title: this.props.title,
+      content: this.props.content,
     };
-    this.updateTitle = this.updateTitle.bind(this);
-    this.updateContent = this.updateContent.bind(this);
-    this.submit = this.submit.bind(this);
+    this.update = this.update.bind(this);
+    this.save = this.save.bind(this);
+    this.cancel = this.cancel.bind(this);
   }
 
-  updateTitle(ev) {
-    this.setState({title: ev.target.value});
+  update(ev) {
+    let newItem = {};
+    newItem[ev.target.name] = ev.target.value;
+    this.setState(newItem);
   }
 
-  updateContent(ev) {
-    this.setState({content: ev.target.value});
-  }
-
-  submit(ev) {
+  save(ev) {
     ev.preventDefault();
-    let todo = {title: this.state.title, content: this.state.content};
-    console.log('this.props= ', this.props);
-    this.props.addTodo(todo);
-    this.setState({
-      title: '',
-      content: '',
-    })
+    this.props.finishUpdate(this.state);
   }
+
+  cancel() {
+    this.props.finishUpdate({});
+    }
 
   render() {
-    return <form id="add-item" onSubmit={this.submit}>
-      <input type="text" name="title" value={this.state.title}
-        placeholder="title"
-        onChange={this.updateTitle}/>
-      
-      <input type="text" name="content" value={this.state.content}
-        placeholder="content"
-        onChange={this.updateContent}/>
-      
-      <button type="submit"> Update </button>
+    return <form id="update-item" onSubmit={this.save}>
+      <input type="text" name="title" value={this.state.title} onChange={this.update}/>
+      <input type="text" name="content" value={this.state.content} onChange={this.update}/>
+      <button type="submit" onClick={this.save}> Update </button>
     </form>
   }
 }
