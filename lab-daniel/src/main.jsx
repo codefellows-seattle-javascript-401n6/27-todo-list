@@ -27,6 +27,7 @@ class App extends React.Component {
                         <li><Link to="/dashboard">Dashboard</Link></li>
                     </ul>
                 </nav>
+                
                 <h1>{this.state.header}</h1>
                 <Route exact path="/" component={Landing} />
                 <Route path="/dashboard" component={Dashboard} />

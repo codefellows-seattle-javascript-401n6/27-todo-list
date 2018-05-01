@@ -17,7 +17,6 @@ class NoteCreateForm extends React.Component {
     }
     updateGoal(ev) {
         let setTitle = ev.target.value;
-        console.log('User title: ', setTitle);
         this.setState({title: setTitle});
 
     }
@@ -25,7 +24,6 @@ class NoteCreateForm extends React.Component {
     updateDetail(ev) {
         let setDetail = ev.target.value;
         this.setState({content: setDetail});
-        console.log('User detail: ', setDetail);
     }
 
     handleSubmit(ev) {
