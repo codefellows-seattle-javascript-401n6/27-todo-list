@@ -14,10 +14,10 @@ class NoteItem extends React.Component {
 
   render() {
     return (
-        <div>
-            <h3>{this.props.note.title}</h3>
-            <p>{this.props.note.content}</p>
-            <button onClick={this.handleRemove}> Delete </button>
+        <div className="goal-list">
+            <h3 id="note-title">{this.props.note.title}</h3>
+            <p id="note-list">{this.props.note.content}</p>
+            <button id="note-remove" onClick={this.handleRemove}> Delete </button>
         </div>
     )
   }

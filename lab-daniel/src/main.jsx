@@ -10,6 +10,8 @@ import {
 import Landing from './components/Landing.jsx'
 import Dashboard from './components/dashboard/Dashboard.jsx';
 
+import './style/main.scss';
+
 class App extends React.Component {
     constructor(props){
     super(props);

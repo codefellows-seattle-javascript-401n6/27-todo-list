@@ -37,11 +37,11 @@ class NoteCreateForm extends React.Component {
     render() {
         return (
             <div>
-                <p>Add a new goal</p>
+                <p id="dashSubheader">ADD A NEW GOAL</p>
                 <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.updateGoal} type="text" placeholder="Type goal here"/>
-                    <input onChange={this.updateDetail} type="text" placeholder="Details about goal..."/>
-                    <button type="submit">Add</button>
+                    <input id="title" onChange={this.updateGoal} type="text" placeholder="Type goal here"/>
+                    <input id="content" onChange={this.updateDetail} type="text" placeholder="Details about goal..."/>
+                    <button id="add" type="submit">Add</button>
                 </form>
             </div>
         )

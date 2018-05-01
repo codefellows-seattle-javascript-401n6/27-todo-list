@@ -9,7 +9,7 @@ class Landing extends React.Component {
     render() {
         return (
         <div>
-            <p>Welcome to Execute. Your Premier ap to track all your goals.</p>
+            <p id="subheader">Welcome to Execute - The premier app to track personal goals. Click Dashboard to begin.</p>
         </div>
         )
     }

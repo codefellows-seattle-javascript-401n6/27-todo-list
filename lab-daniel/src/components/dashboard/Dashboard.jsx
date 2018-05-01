@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import uuidv1 from 'uuid/v1';
 
 import NoteCreateForm from './NoteCreateForm.jsx';
-import NoteListForm from './NoteListForm.jsx'
+import NoteList from './NoteList.jsx'
 import NoteItem from './NoteItem.jsx'
 
 class Dashboard extends React.Component {
@@ -33,7 +33,7 @@ class Dashboard extends React.Component {
         return (
             <main>
             <NoteCreateForm newGoalFunc={this.addGoal}></NoteCreateForm>
-            <NoteListForm notes={this.state.notes} removeGoal={this.removeGoal}></NoteListForm>
+            <NoteList notes={this.state.notes} removeGoal={this.removeGoal}></NoteList>
             </main>
         )
     }
