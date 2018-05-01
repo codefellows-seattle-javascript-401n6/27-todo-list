@@ -15,7 +15,7 @@ class TodoUpdateForm extends React.Component {
 
   update(ev) {
     let newItem = {};
-    newItem[ev.target.title] = ev.target.value;
+    newItem[ev.target.name] = ev.target.value;
     this.setState(newItem);
   }
 
@@ -31,9 +31,7 @@ class TodoUpdateForm extends React.Component {
   render() {
     return <form id="update-item" onSubmit={this.save}>
       <input type="text" name="title" value={this.state.title} onChange={this.update}/>
-      
       <input type="text" name="content" value={this.state.content} onChange={this.update}/>
-      
       <button type="submit" onClick={this.save}> Update </button>
     </form>
   }

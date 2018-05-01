@@ -5,6 +5,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const config = {
   mode: 'development',
   entry: './src/app.jsx',
+  devtool: 'source-map',
   plugins: [new HtmlPlugin({template: __dirname + '/src/index.html'})],
   // output: {
   //   path: path.resolve(__dirname, './dist'),

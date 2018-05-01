@@ -13,7 +13,7 @@ class TodoList extends React.Component {
       return <Todo todo={todo}
       removeTodo={this.props.removeTodo}
       updateTodo={this.props.updateTodo}
-        key={index} index={index}/>;
+      key={index} index={index}/>;
 
     });
   }

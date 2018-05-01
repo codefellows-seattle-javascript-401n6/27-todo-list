@@ -40,6 +40,9 @@ class TodoPage extends React.Component {
   }
 
   addTodo(todo) {
+    todo.id = uuid();
+    todo.editing = false;
+    todo.completed = false;
     this.state.todo.push(todo);
     this.setState({ todo: this.state.todo });
   }
@@ -51,14 +54,14 @@ class TodoPage extends React.Component {
   }
 
   updateTodo(updatedItem, index) {
-    let newArray = [...this.state.Todo];
+    let newArray = [...this.state.todo];
     newArray[index] = updatedItem;
     this.setState({todo: newArray});
   }
 
   render() {
     return <div>
-      <ul>
+      <ul id="todo-list">
         <TodoList todo={this.state.todo} removeTodo={this.removeTodo} updateTodo={this.updateTodo} />
         <TodoForm addTodo={this.addTodo} />
       </ul>
