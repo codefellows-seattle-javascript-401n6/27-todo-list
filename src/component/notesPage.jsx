@@ -16,6 +16,7 @@ class Notes extends React.Component{
     ]}
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
+    
  
   }
 
@@ -29,14 +30,17 @@ class Notes extends React.Component{
   removeNote(index) {
     console.log('page removing', index);
     this.state.notes.splice(index, 1);
-    this.setState({notes: this.state.notes});
+    this.setState({note: this.state.note});
   }
 
   render(){
     return <div>
   
       <Dashboard addNote={this.addNote}/>
-      <NoteList notes={this.state.notes}/>
+      <NoteList notes={this.state.notes}
+        removeNote={this.removeNote}
+      />
+      
   
 
   </div>
