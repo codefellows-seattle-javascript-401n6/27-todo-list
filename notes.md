@@ -5,7 +5,7 @@
 1. install dependencies
 ```
 sudo npm i -g webpack webpack-cli
-npm i babel-core babel-loader babel-preset-env babel-preset-react react react-dom react-router-dom html-webpack-plugin
+npm i webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react react react-dom react-router-dom html-webpack-plugin webpack-dev-server
 npm i style-loader css-loader sass-loader
 ``` 
 
@@ -41,6 +41,8 @@ const config = {
 module.exports = config;
 ```
 
+1. create `src` folder.
+
 1. create minimal `index.html` file
 ```
 <div id="root"></div>
@@ -51,7 +53,7 @@ module.exports = config;
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style.css'
+import './src/style/main.css'
 
 class App extends React.Component { // MyCoolApp is the name of the app
   constructor(props){
@@ -60,19 +62,24 @@ class App extends React.Component { // MyCoolApp is the name of the app
 
   render() { // JSX
     return <div>
-      <h1>My Cool App</h1>
+      <h1>Hello World!</h1>
       </div>;
   }
 }
 
 const root = document.getElementById('root');
 ReactDOM.render(<App/>, root);  // Class and render need to be the same.
-}
 ```
 
-#Setup CSS
-in app/main.js file
+1. in `src` create `style` folder for CSS and SCSS elements.
+create `main.css` file.
+
+1. in `package.json` insert this into scripts to enable live editing.
+```
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "hot": "webpack-dev-server --inline --hot"
 ```
 
-```
+# From lab folder run webpack
 
