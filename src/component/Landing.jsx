@@ -11,7 +11,7 @@ class Landinig extends React.Component{
   render(){
     return <div>
       <h3>
-      I am so tired...
+      Welcome to your note's list, click Note List to see your Notes and add/remove a Note
       </h3>
     
     </div>

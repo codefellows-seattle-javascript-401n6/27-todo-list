@@ -15,6 +15,11 @@ class Note extends React.Component{
 
   render(){
     return <div>
+        <span>ID: 
+        <Link to={"/notes/" + this.props.id}>
+          {this.props.id}
+        </Link>
+        </span>
          <span>Title: 
         <Link to={"/notes/" + this.props.title}>
           {this.props.title}
