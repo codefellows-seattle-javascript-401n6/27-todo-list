@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class Todoitem extends React.Component {
+class NoteItem extends React.Component {
  constructor(props) {
    super(props);
    this.remove = this.remove.bind(this);
@@ -14,7 +14,7 @@ class Todoitem extends React.Component {
  render() {
    return <div>
      <span>Task:
-      <Link to={"/Todos/" + this.props.notes}>
+      <Link to={"/Dashboard/" + this.props.notes}>
           {this.props.task}
         </Link>
       </span>
@@ -22,8 +22,8 @@ class Todoitem extends React.Component {
           {this.props.notes}
         </a>
       </span>
-     <button onClick={this.remove}>remove</button>
+     <button onClick={this.remove}>done</button>
      </div>
  }
 }
-export default Todoitem;
+export default NoteItem;

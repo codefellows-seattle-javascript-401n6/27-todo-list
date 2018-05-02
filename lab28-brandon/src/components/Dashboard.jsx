@@ -1,16 +1,16 @@
 import React from 'react';
 
-import TodoForm from './TodoForm.jsx';
-import TodoList from './TodoList.jsx';
+import NoteCreateForm from './NoteCreateForm.jsx';
+import NoteList from './NoteList.jsx';
 
-class Todos extends React.Component {
+class Dashboard extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
      items: [
       {task: "Feed Kiddo", notes: "make sure she eats all veggies"},
       {task: "Wash Kiddo", notes: "wash hands/brush teeth"},
-      {task: "Put kiddo to bed", notes: "read her two books"}, 
+      {task: "Put Kiddo to bed", notes: "read her two books"}, 
    ]};
    this.addTask = this.addTask.bind(this);
    this.removeTask = this.removeTask.bind(this);
@@ -30,11 +30,11 @@ class Todos extends React.Component {
 
  render() {
    return <div>
-       <TodoForm addTask={this.addTask}/>
-       <TodoList items= {this.state.items}
+       <NoteCreateForm addTask={this.addTask}/>
+       <Dashboard items= {this.state.items}
         removeTask={this.removeTask}/>
      </div> 
  }
 }
 
-export default Todos;
+export default Dashboard;

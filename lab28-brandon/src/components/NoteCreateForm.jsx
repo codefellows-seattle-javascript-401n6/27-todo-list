@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Todoform extends React.Component {
+class NoteCreateForm extends React.Component {
  constructor(props) {
    super(props);
    this.state = {};
@@ -38,4 +38,4 @@ submit(ev) {
         </form>
  }
 }
-export default Todoform;
+export default NoteCreateForm;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Item from './TodoItem.jsx';
+import Item from './NoteItem.jsx';
 
-class TodoList extends React.Component {
+class NoteList extends React.Component {
  constructor(props) {
    super(props);
  }
@@ -20,4 +20,4 @@ list() {
      </ul>
  }
 }
-export default TodoList;
+export default NoteList;
