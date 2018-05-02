@@ -5,7 +5,7 @@ const path = require('path');
 const config = {
   mode: 'development', // production
   devtool: 'source-map',
-  entry: './main.js', // name of java script file
+  entry: './src/main.js', // name of java script file
   output: {
     path: path.resolve(__dirname, './dist'), // puts dist in current working directory
     filename: 'bundle.js'

@@ -23,7 +23,7 @@ const path = require('path');
 const config = {
   mode: 'development', // production
   devtool: 'source-map',
-  entry: './main.js', // name of java script file
+  entry: './src/main.js', // name of java script file
   output: {
     path: path.resolve(__dirname, './dist'), // puts dist in current working directory
     filename: 'bundle.js'
@@ -43,17 +43,17 @@ module.exports = config;
 
 1. create `src` folder.
 
-1. create minimal `index.html` file
+1. create minimal `index.html` file in `root` folder of project.
 ```
 <div id="root"></div>
 <script src="./dist/bundle.js"></script>
 ```
 
-1. create minimal `main.js` react file
+1. create minimal `main.js` react file in `src` folder.
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './src/style/main.css'
+import './style/main.css'
 
 class App extends React.Component { // MyCoolApp is the name of the app
   constructor(props){

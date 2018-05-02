@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './src/style/main.css'
+import './style/main.scss'
 
 class App extends React.Component { // MyCoolApp is the name of the app
   constructor(props){
