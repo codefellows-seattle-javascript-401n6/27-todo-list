@@ -2,6 +2,7 @@
 
 import React from 'react';
 import NoteList from './noteList.jsx';
+import Dashboard from './NoteCreateForm.jsx';
 // import NoteForm from './noteCreateForm';
 
 class Notes extends React.Component{
@@ -13,15 +14,15 @@ class Notes extends React.Component{
       {title:'bla', content:'blablabla'},
       {title:'bla', content:'blablabla'}
     ]}
-    // this.addNote = this.addNote.bimd(this);
+    this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
   }
 
-  // addNote(note) {
-  //   console.log('new note', note)
-  //   this.state.notes.push(note);
-  //   this.setState({notes: this.state.notes})
-  // }
+  addNote(note) {
+    console.log('new note', note);
+    this.state.notes.push(note);
+
+  }
 
   removeNote(index) {
     console.log('page removing', index);
@@ -31,9 +32,10 @@ class Notes extends React.Component{
 
   render(){
     return <div>
-      {/* <NoteForm addNote={this.addNote}/> */}
+  
+      <Dashboard addNote={this.addNote}/>
       <NoteList notes={this.state.notes}/>
-      removeNote={this.removeNote};
+  
 
   </div>
   }

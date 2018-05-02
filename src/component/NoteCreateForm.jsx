@@ -24,6 +24,7 @@ updateContent(ev){
   this.setState({content:inputContent});
 }
 
+
 updateTitle(ev){
   let inputTitle = ev.target.value;
   this.setState({title:inputTitle});
@@ -31,16 +32,21 @@ updateTitle(ev){
 
 handleSubmit(ev) {
   ev.preventDefault();
-
+  let note = {title: this.state.title, content: this.state.content}
+  this.props.addNote(note);
+  this.setState({
+    title: '',
+    content: ''
+  })
 }
 
 handel
   render(){
     return <div>
     <form onSubmit={this.handleSubmit}>
-    <input type="text" value={this.state.content} onChange={this.updateContent} placeholder='content'></input>
-    <input type="text" value={this.state.title} onChange={this.updateTitle} placeholder='Title'></input>
-    <button>Submit</button>
+    <input type="text" name='content' value={this.state.content} onChange={this.updateContent} placeholder='content'></input>
+    <input type="text" name='title' value={this.state.title} onChange={this.updateTitle} placeholder='Title'></input>
+    <input type='submit' value='Add Note' />
     </form>
     </div>
   }
