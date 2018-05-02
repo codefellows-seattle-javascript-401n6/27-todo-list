@@ -7,6 +7,7 @@ class NoteList extends React.Component {
    super(props);
  }
 list() {
+    console.log('listing list');
     return this.props.items.map((item, index) => {
         return <Item task={item.task} notes={item.notes}
           key={index} index={index}

@@ -1,9 +1,13 @@
 import React from 'react';
+import uuidv4 from 'uuidv4';
 
 class NoteCreateForm extends React.Component {
  constructor(props) {
    super(props);
-   this.state = {};
+   this.state = {  
+      title: '', 
+      content: '',    
+   };
    this.updateTask = this.updateTask.bind(this);
    this.updateNotes = this.updateNotes.bind(this);
    this.submit = this.submit.bind(this);
@@ -17,7 +21,7 @@ class NoteCreateForm extends React.Component {
     this.setState({notes: ev.target.value});
 }
 submit(ev) {
-    ev.preventDefault();
+    ev.preventDefault(); 
     let task = {task: this.state.task, notes: this.state.notes};
     this.props.addTask(task);
     this.setState({
