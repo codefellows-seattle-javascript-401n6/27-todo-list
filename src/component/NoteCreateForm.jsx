@@ -7,7 +7,7 @@ class Dashboard extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      id: uuid.v1(),
+      id: '',
       // editing: !editing.value,
       // completed: !completed.value,
       content: '',
@@ -32,7 +32,7 @@ updateTitle(ev){
 
 handleSubmit(ev) {
   ev.preventDefault();
-  let note = {title: this.state.title, content: this.state.content}
+  let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
   this.props.addNote(note);
   this.setState({
     title: '',

@@ -10,9 +10,9 @@ class Notes extends React.Component{
     super(props);
     this.state = {
       notes : [
-      {title:'bla', content:'blablabla'},
-      {title:'bla', content:'blablabla'},
-      {title:'bla', content:'blablabla'}
+      {id:'1', title:'bla', content:'blablabla'},
+      {id:'1', title:'bla', content:'blablabla'},
+      {id:'1', title:'bla', content:'blablabla'}
     ]}
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
