@@ -16,11 +16,13 @@ class Notes extends React.Component{
     ]}
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
+ 
   }
 
   addNote(note) {
     console.log('new note', note);
     this.state.notes.push(note);
+    this.setState({note: this.state.note});
 
   }
 
