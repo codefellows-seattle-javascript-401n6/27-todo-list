@@ -37,7 +37,6 @@ class App extends React.Component{
         </nav>
         <div id='main-content'>
           <Route exact path='/' component={Landing}/>
-          <Route exact path='/dashboard' component={Dashboard}/>
           <Route exact path='/notesPage' component={Notes}/>
 
         </div>
