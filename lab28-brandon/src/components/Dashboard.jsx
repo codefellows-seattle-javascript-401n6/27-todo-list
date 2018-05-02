@@ -38,8 +38,8 @@ removeTask(id) {
  render() {
    return <div>
        <NoteCreateForm addTask={this.addTask}/>
-       <Dashboard items= {this.state.items}
-        removeTask={this.removeTask}/>
+       <NoteList items={this.state.tasks}
+        removeTask={this.removeTask} />
      </div> 
  }
 }

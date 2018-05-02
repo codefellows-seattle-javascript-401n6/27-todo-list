@@ -26,12 +26,12 @@ class App extends React.Component {
       <nav>
         <ul>
           <li><Link to="/">Homepage</Link></li>
-          <li><Link to="/Dashboard">Todo-List</Link></li>
+          <li><Link to="/dashboard">Todo-List</Link></li>
         </ul>
       </nav>
       <h1>{this.state.title}</h1>
       <Route exact path="/" component={Landing} />
-      <Route path="/Dashboard" component={Dashboard} />
+      <Route path="/dashboard" component={Dashboard} />
    </div>
    </Router>
  }
