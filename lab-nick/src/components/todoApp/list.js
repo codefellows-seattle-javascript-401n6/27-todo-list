@@ -3,7 +3,6 @@
 import React from 'react';
 
 import ListEdit from './list-edit.js';
-// import Dashboard from '../dashboard.js';
 
 class List extends React.Component{
   constructor(props) {
@@ -35,7 +34,7 @@ class List extends React.Component{
   }
 
   cancelUpdate() {
-    this.toggleEdit();
+    this.setState({editing: false});
   }
 
   render() {

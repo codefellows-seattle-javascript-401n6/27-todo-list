@@ -8,21 +8,21 @@ class TodoList extends React.Component {
     super(props);
     this.showAllItems = this.showAllItems.bind(this);
   }
-  
+
   showAllItems() {
     return this.props.items.map((item) => {
       return <List  key={item.id} 
                     id={item.id} 
                     title={item.title} 
                     content={item.content} 
-                    deleteNote={this.props.deleteItem} 
+                    deleteItem={this.props.deleteItem} 
                     editItem={this.props.editItem}/>
     });
   }
 
   render() {
     return <div>
-    <h2>Items</h2>
+    <h2>Items List2</h2>
     <ul>{this.showAllItems()}</ul>
   </div>
   }
