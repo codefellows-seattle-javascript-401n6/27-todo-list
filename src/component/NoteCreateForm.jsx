@@ -9,8 +9,7 @@ class Dashboard extends React.Component{
     super(props);
     this.state = {
       id: '',
-      // editing: !editing.value,
-      // completed: !completed.value,
+      editing: false, 
       content: '',
       title: '',
     }
@@ -41,7 +40,10 @@ handleSubmit(ev) {
   })
 }
 
-handel
+edit() {
+  the.setState({editing: true})
+}
+
   render(){
     return <div>
     <form onSubmit={this.handleSubmit}>

@@ -1,11 +1,16 @@
 'use strict';
 import React from 'react';
+import Dashboard from './NoteCreateForm.jsx';
 import {Link} from 'react-router-dom';
 
 class Note extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      isEditing: false,
+    };
     this.remove = this.remove.bind(this);
+    this.edit = this.edit.bind(this);
   }
 
   remove() {
@@ -13,22 +18,23 @@ class Note extends React.Component{
     this.props.removeNote(this.props.index);
   }
 
-  render(){
-    return <div>
-        <span>ID: 
-        <Link to={"/notes/" + this.props.id}>
+  edit() {
+    debugger;
+   this.setState({isEditing: !this.state.isEditing});
+   console.log('17 testing double click', this.state.isEditing);
+  }
+
+  render() {
+    return <div onDoubleClick={this.edit}>
+        <span>ID:
           {this.props.id}
-        </Link>
         </span>
-         <span>Title: 
-        <Link to={"/notes/" + this.props.title}>
+        <span>Title:
           {this.props.title}
-        </Link>
-      </span>
-      <span>Content: <a href={"tel:" + this.props.content}>
+        </span>
+        <span>Content:
           {this.props.content}
-        </a>
-      </span>
+        </span>
       <button onClick={this.remove}>remove</button>
     </div>
   }

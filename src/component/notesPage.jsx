@@ -41,7 +41,6 @@ class Notes extends React.Component{
         removeNote={this.removeNote}
       />
       
-  
 
   </div>
   }
