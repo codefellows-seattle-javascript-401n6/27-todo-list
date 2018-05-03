@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-
 import ListEdit from './list-edit.js';
 
 class List extends React.Component{
@@ -28,9 +27,8 @@ class List extends React.Component{
   }
 
   saveUpdate(itemInfo) {
-    console.log(this.state, 'Editing state changed.')
-    this.setState({editing: false});
     this.props.editItem(itemInfo, this.props.id);
+    this.setState({editing: false});
   }
 
   cancelUpdate() {
@@ -47,10 +45,10 @@ class List extends React.Component{
                         cancelUpdate={this.cancelUpdate}>
              </ListEdit>
     }
-    // return <li onDoubleClick={this.toggleEdit}><div>
     return <li><div>
-      {this.props.title}: {this.props.content}. 
-      <button onClick={this.deleteOneItem}>DELETE</button>
+      <h4> {this.props.title} </h4> 
+      <pre> {this.props.content} </pre>
+      <button onClick={this.deleteOneItem}>Remove</button>
       <button onClick={this.toggleEdit}>Edit</button>
       </div>
     </li>

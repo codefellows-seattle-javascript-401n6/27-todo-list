@@ -20,9 +20,9 @@ class TodoList extends React.Component {
     });
   }
 
-  render() {
+  render() { // This is the list of items that shows up on the dashboard.
     return <div>
-    <h2>Items List2</h2>
+    <h2>Items List</h2>
     <ul>{this.showAllItems()}</ul>
   </div>
   }

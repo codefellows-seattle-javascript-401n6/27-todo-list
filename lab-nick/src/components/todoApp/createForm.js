@@ -38,8 +38,12 @@ class TodoCreateForm extends React.Component {
     return <div>
       <h2>Add a new todo item</h2>
       <form onSubmit={this.submitItem}>
-        <input onChange={this.updateTitle} type="text" placeholder="title"/>
-        <textarea onChange={this.updateContent} />
+        <div>
+          <input onChange={this.updateTitle} type="text" placeholder="To Do Item"/>
+        </div>
+        <pre>
+          <textarea onChange={this.updateContent} type="text" placeholder="Item Description" />
+        </pre>
         <button type="submit">Add Todo Item</button>
       </form>
     </div>

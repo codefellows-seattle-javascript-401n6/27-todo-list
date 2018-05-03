@@ -83,7 +83,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "pre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0; }\n", ""]);
 
 // exports
 
@@ -25167,7 +25167,7 @@ var Dashboard = function (_React$Component) {
     value: function editItem(itemInfo, id) {
       // console.log(this.state, 'inside edit todo item function in dashboard');
       var pendingUpdate = this.state.items.find(function (item) {
-        return item.id = id;
+        return item.id === id;
       });
       var itemIndex = this.state.items.indexOf(pendingUpdate);
       var newItemArray = this.state.items.slice();
@@ -25355,8 +25355,16 @@ var TodoCreateForm = function (_React$Component) {
         _react2.default.createElement(
           'form',
           { onSubmit: this.submitItem },
-          _react2.default.createElement('input', { onChange: this.updateTitle, type: 'text', placeholder: 'title' }),
-          _react2.default.createElement('textarea', { onChange: this.updateContent }),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('input', { onChange: this.updateTitle, type: 'text', placeholder: 'To Do Item' })
+          ),
+          _react2.default.createElement(
+            'pre',
+            null,
+            _react2.default.createElement('textarea', { onChange: this.updateContent, type: 'text', placeholder: 'Item Description' })
+          ),
           _react2.default.createElement(
             'button',
             { type: 'submit' },
@@ -25541,17 +25549,13 @@ var List = function (_React$Component) {
   }, {
     key: 'saveUpdate',
     value: function saveUpdate(itemInfo) {
-      console.log(this.state, 'Editing state changed.');
-      this.setState({ editing: false });
       this.props.editItem(itemInfo, this.props.id);
+      this.setState({ editing: false });
     }
   }, {
     key: 'cancelUpdate',
     value: function cancelUpdate() {
-      console.log('edit cancell1: ', this.state);
-      // this.setState({editing: !this.setState.editing});
       this.setState({ editing: false });
-      console.log('edit cancell2: ', this.state);
     }
   }, {
     key: 'render',
@@ -25564,21 +25568,30 @@ var List = function (_React$Component) {
           saveUpdate: this.saveUpdate,
           cancelUpdate: this.cancelUpdate });
       }
-      // return <li onDoubleClick={this.toggleEdit}><div>
       return _react2.default.createElement(
         'li',
         null,
         _react2.default.createElement(
           'div',
           null,
-          this.props.title,
-          ': ',
-          this.props.content,
-          '.',
+          _react2.default.createElement(
+            'h4',
+            null,
+            ' ',
+            this.props.title,
+            ' '
+          ),
+          _react2.default.createElement(
+            'pre',
+            null,
+            ' ',
+            this.props.content,
+            ' '
+          ),
           _react2.default.createElement(
             'button',
             { onClick: this.deleteOneItem },
-            'DELETE'
+            'Remove'
           ),
           _react2.default.createElement(
             'button',
@@ -25658,13 +25671,14 @@ var TodoList = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      // This is the list of items that shows up on the dashboard.
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'h2',
           null,
-          'Items List2'
+          'Items List'
         ),
         _react2.default.createElement(
           'ul',

@@ -1,9 +1,7 @@
 'use strict';
 
 import React from 'react';
-
 import { Link } from 'react-router-dom';
-
 import TodoCreateForm from './todoApp/createForm.js';
 import TodoList from './todoApp/todoList.js';
 
@@ -39,7 +37,7 @@ class Dashboard extends React.Component {
   editItem(itemInfo, id) {
     // console.log(this.state, 'inside edit todo item function in dashboard');
     let pendingUpdate = this.state.items.find(item => {
-      return item.id = id;
+      return item.id === id;
     });
     let itemIndex = this.state.items.indexOf(pendingUpdate);
     let newItemArray = this.state.items.slice();

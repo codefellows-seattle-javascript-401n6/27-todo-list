@@ -1,7 +1,6 @@
 'use strict';
 
 import React from 'react';
-
 import List from './list.js';
 
 class ListEdit extends React.Component {
