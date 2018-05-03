@@ -12,9 +12,9 @@ const config = {
   },
   module: {
     rules: [
-      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
-      {test: /\.css$/, loader: [
-        'style-loader', 'css-loader'  // The order of these matters!
+      {test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/},
+      {test: /\.s?css$/, loader: [
+        'style-loader', 'css-loader', 'sass-loader'  // The order of these matters!
       ]}
     ]
   }
