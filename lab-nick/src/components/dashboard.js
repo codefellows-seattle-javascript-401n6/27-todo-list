@@ -35,7 +35,6 @@ class Dashboard extends React.Component {
   }
 
   editItem(itemInfo, id) {
-    // console.log(this.state, 'inside edit todo item function in dashboard');
     let pendingUpdate = this.state.items.find(item => {
       return item.id === id;
     });

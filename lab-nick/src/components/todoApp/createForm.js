@@ -32,17 +32,19 @@ class TodoCreateForm extends React.Component {
     let newId = uuidv4()
     this.setState({id: newId});
     this.props.newItemFunc(this.state);
+    document.getElementById("title").value = '';
+    document.getElementById("content").value = '';
   }
 
   render() {
     return <div>
       <h2>Add a new todo item</h2>
-      <form onSubmit={this.submitItem}>
+      <form id="createForm" onSubmit={this.submitItem}>
         <div>
-          <input onChange={this.updateTitle} type="text" placeholder="To Do Item"/>
+          <input id="title" onChange={this.updateTitle} type="text" placeholder="To Do Item"/>
         </div>
         <pre>
-          <textarea onChange={this.updateContent} type="text" placeholder="Item Description" />
+          <textarea id="content" onChange={this.updateContent} type="text" placeholder="Item Description" />
         </pre>
         <button type="submit">Add Todo Item</button>
       </form>

@@ -83,7 +83,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "pre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0; }\n", ""]);
+exports.push([module.i, "body {\n  background-color: bisque;\n  text-align: left; }\n\npre {\n  display: block;\n  font-family: monospace;\n  white-space: pre;\n  margin: 1em 0; }\n", ""]);
 
 // exports
 
@@ -25165,7 +25165,6 @@ var Dashboard = function (_React$Component) {
   }, {
     key: 'editItem',
     value: function editItem(itemInfo, id) {
-      // console.log(this.state, 'inside edit todo item function in dashboard');
       var pendingUpdate = this.state.items.find(function (item) {
         return item.id === id;
       });
@@ -25340,6 +25339,8 @@ var TodoCreateForm = function (_React$Component) {
       var newId = (0, _v2.default)();
       this.setState({ id: newId });
       this.props.newItemFunc(this.state);
+      document.getElementById("title").value = '';
+      document.getElementById("content").value = '';
     }
   }, {
     key: 'render',
@@ -25354,16 +25355,16 @@ var TodoCreateForm = function (_React$Component) {
         ),
         _react2.default.createElement(
           'form',
-          { onSubmit: this.submitItem },
+          { id: 'createForm', onSubmit: this.submitItem },
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement('input', { onChange: this.updateTitle, type: 'text', placeholder: 'To Do Item' })
+            _react2.default.createElement('input', { id: 'title', onChange: this.updateTitle, type: 'text', placeholder: 'To Do Item' })
           ),
           _react2.default.createElement(
             'pre',
             null,
-            _react2.default.createElement('textarea', { onChange: this.updateContent, type: 'text', placeholder: 'Item Description' })
+            _react2.default.createElement('textarea', { id: 'content', onChange: this.updateContent, type: 'text', placeholder: 'Item Description' })
           ),
           _react2.default.createElement(
             'button',
@@ -25430,6 +25431,7 @@ var ListEdit = function (_React$Component) {
     _this.update = _this.update.bind(_this);
     _this.save = _this.save.bind(_this);
     _this.cancel = _this.cancel.bind(_this);
+    _this.fill = _this.fill.bind(_this);
     return _this;
   }
 
@@ -25444,9 +25446,7 @@ var ListEdit = function (_React$Component) {
     key: 'save',
     value: function save(event) {
       event.preventDefault();
-      console.log(this.state, 'first save console');
       this.props.saveUpdate(this.state);
-      console.log(this.state, 'second save console');
     }
   }, {
     key: 'cancel',
@@ -25455,13 +25455,28 @@ var ListEdit = function (_React$Component) {
       this.props.cancelUpdate();
     }
   }, {
+    key: 'fill',
+    value: function fill(e) {
+      e.preventDefault();
+      document.getElementById("title-edit").value = this.state.title;
+      document.getElementById("content-edit").value = this.state.content;
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'form',
         { onSubmit: this.save },
-        _react2.default.createElement('input', { onChange: this.update, name: 'title', type: 'text', placeholder: 'title' }),
-        _react2.default.createElement('textarea', { onChange: this.update, name: 'content' }),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement('input', { id: 'title-edit', onChange: this.update, name: 'title', type: 'text' })
+        ),
+        _react2.default.createElement(
+          'pre',
+          null,
+          _react2.default.createElement('textarea', { id: 'content-edit', onChange: this.update, name: 'content', type: 'text' })
+        ),
         _react2.default.createElement(
           'button',
           { type: 'submit' },
@@ -25471,6 +25486,11 @@ var ListEdit = function (_React$Component) {
           'button',
           { onClick: this.cancel },
           'Cancel'
+        ),
+        _react2.default.createElement(
+          'button',
+          { onClick: this.fill },
+          'fill'
         )
       );
     }

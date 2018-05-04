@@ -14,21 +14,18 @@ class ListEdit extends React.Component {
     this.update = this.update.bind(this);
     this.save = this.save.bind(this);
     this.cancel = this.cancel.bind(this);
+    this.fill = this.fill.bind(this);
   }
 
   update(event) {
-      let newState = {};
-      newState[event.target.name] = event.target.value;
-      this.setState(newState);
-
+    let newState = {};
+    newState[event.target.name] = event.target.value;
+    this.setState(newState);
   }
 
   save(event) {
     event.preventDefault();
-    console.log(this.state, 'first save console');
     this.props.saveUpdate(this.state)
-    console.log(this.state, 'second save console');
-
   }
 
   cancel(event) {
@@ -36,13 +33,24 @@ class ListEdit extends React.Component {
     this.props.cancelUpdate();
   }
 
+  fill(e) {
+    e.preventDefault();
+    document.getElementById("title-edit").value = this.state.title;
+    document.getElementById("content-edit").value = this.state.content;
+  }
 
+  
   render() {
     return <form onSubmit={this.save}>
-     <input onChange={this.update} name="title" type="text" placeholder="title"/>
-     <textarea onChange={this.update} name="content"/>
-     <button type="submit">Update</button>
-     <button onClick={this.cancel}>Cancel</button>
+    <div>
+      <input id="title-edit" onChange={this.update} name="title" type="text" />
+    </div>
+    <pre>
+      <textarea id="content-edit" onChange={this.update} name="content" type="text" />
+    </pre>
+    <button type="submit">Update</button>
+    <button onClick={this.cancel}>Cancel</button>
+    <button onClick={this.fill}>Retreive Item</button>
     </form>
   }
 }
