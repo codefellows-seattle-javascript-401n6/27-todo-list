@@ -5,8 +5,7 @@
 1. install dependencies
 ```
 sudo npm i -g webpack webpack-cli npx
-npm i webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react react react-dom react-router-dom html-webpack-plugin webpack-dev-server node-sass
-npm i style-loader css-loader sass-loader
+npm i webpack webpack-cli babel-core babel-loader babel-preset-env babel-preset-react react react-dom react-router-dom html-webpack-plugin webpack-dev-server node-sass style-loader css-loader sass-loader
 ``` 
 
 1. configure `.babelrc` file
@@ -18,6 +17,7 @@ npm i style-loader css-loader sass-loader
 
 1. configure `webpack.config.js` file
 ```
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const config = {
@@ -28,11 +28,12 @@ const config = {
     path: path.resolve(__dirname, './dist'), // puts dist in current working directory
     filename: 'bundle.js'
   },
+  plugins: [new HtmlWebpackPlugin()],
   module: {
     rules: [
       {test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/},
       {test: /\.s?css$/, loader: [
-        'style-loader', 'css-loader'  // The order of these matters!
+        'style-loader', 'css-loader', 'sass-loader'  // The order of these matters!
       ]}
     ]
   }
@@ -46,7 +47,6 @@ module.exports = config;
 1. create minimal `index.html` file in `root` folder of project.
 ```
 <div id="root"></div>
-<script src="./dist/bundle.js"></script>
 ```
 
 1. create minimal `main.js` react file in `src` folder.
