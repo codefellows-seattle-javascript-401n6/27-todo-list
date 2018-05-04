@@ -25354,6 +25354,11 @@ var TodoCreateForm = function (_React$Component) {
           'Add a new todo item'
         ),
         _react2.default.createElement(
+          'p',
+          null,
+          'Note: The Description form uses pre formatted format to maintain the style in which you write your description.'
+        ),
+        _react2.default.createElement(
           'form',
           { id: 'createForm', onSubmit: this.submitItem },
           _react2.default.createElement(
@@ -25490,7 +25495,7 @@ var ListEdit = function (_React$Component) {
         _react2.default.createElement(
           'button',
           { onClick: this.fill },
-          'fill'
+          'Retreive Item'
         )
       );
     }

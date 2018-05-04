@@ -33,24 +33,18 @@ class ListEdit extends React.Component {
     this.props.cancelUpdate();
   }
 
-  fill(e) {
-    e.preventDefault();
-    document.getElementById("title-edit").value = this.state.title;
-    document.getElementById("content-edit").value = this.state.content;
-  }
-
-  
   render() {
     return <form onSubmit={this.save}>
     <div>
-      <input id="title-edit" onChange={this.update} name="title" type="text" />
+      <input id="title-edit" onChange={this.update} name="title" type="text" 
+        value={this.state.title}/>
     </div>
     <pre>
-      <textarea id="content-edit" onChange={this.update} name="content" type="text" />
+      <textarea id="content-edit" onChange={this.update} name="content" type="text"
+        value={this.state.content}/>
     </pre>
     <button type="submit">Update</button>
     <button onClick={this.cancel}>Cancel</button>
-    <button onClick={this.fill}>Retreive Item</button>
     </form>
   }
 }

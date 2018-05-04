@@ -39,6 +39,7 @@ class TodoCreateForm extends React.Component {
   render() {
     return <div>
       <h2>Add a new todo item</h2>
+      <p>Note: The Description form uses pre formatted format to maintain the style in which you write your description.</p>
       <form id="createForm" onSubmit={this.submitItem}>
         <div>
           <input id="title" onChange={this.updateTitle} type="text" placeholder="To Do Item"/>

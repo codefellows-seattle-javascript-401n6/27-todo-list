@@ -1,5 +1,5 @@
 'use strict';
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const config = {
@@ -10,6 +10,7 @@ const config = {
     path: path.resolve(__dirname, './dist'), // puts dist in current working directory
     filename: 'bundle.js'
   },
+  plugins: [new HtmlWebpackPlugin()],
   module: {
     rules: [
       {test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/},
