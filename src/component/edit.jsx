@@ -13,18 +13,30 @@ class EditingView extends React.Component{
       content: '',
       title: '',
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.editContent = this.editContent.bind(this);
+    this.editTitle = this.editTitle.bind(this);
     this.submitEdit = this.submitEdit.bind(this);
     this.cancle = this.cancle.bind(this);
   }
 
 
-handleChange(ev){
-  let state = {};
-  state[ev.target.title] = ev.target.value;
-  state[ev.target.content] = ev.target.value;
-  this.setState(state);
-}
+  editContent(ev){
+    let inputContent = ev.target.value;
+    this.setState({content:inputContent});
+  }
+  
+  
+  editTitle(ev){
+    let inputTitle = ev.target.value;
+    this.setState({title:inputTitle});
+  }
+  
+// handleChange(ev){
+//   let state = {};
+//   state[ev.target.title] = ev.target.value;
+//   state[ev.target.content] = ev.target.value;
+//   this.setState(state);
+// }
 
 submitEdit(ev) {
   ev.preventDefault();
@@ -38,10 +50,9 @@ cancle() {
 
   render(){
     return <div>
-    <form onSubmit={this.handleSubmit}>
-    <input type="text" name='content' value={this.state.content} onChange={this.updateContent} placeholder='content'></input>
-    <input type="text" name='title' value={this.state.title} onChange={this.updateTitle} placeholder='Title'></input>
-    <input type='submit' value='Add Note' />
+    <form onSubmit={this.submitEdit}>
+    <input type="text" name='content' value={this.state.content} onChange={this.editContent} placeholder='content'></input>
+    <input type="text" name='title' value={this.state.title} onChange={this.editTitle} placeholder='Title'></input>
     <button type="submit">save</button>
     </form>
     <button onClick={this.cancle}>cancle</button>
