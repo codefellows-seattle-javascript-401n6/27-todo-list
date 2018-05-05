@@ -17,8 +17,8 @@ class ToDoList extends React.Component {
   getToDo() {
     console.log(this.props);
     return this.props.todolist.map((todo, index) => {
-      return <ToDoItem title={todo.title} content={todo.content}
-      key={index} index={index}
+      return <ToDoItem todo={todo}
+      key={todo.id} index={index}
       removeTodo={this.props.removeTodo}/>;
     })
   }
