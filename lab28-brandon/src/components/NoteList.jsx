@@ -1,24 +1,23 @@
 import React from 'react';
 
-import Item from './NoteItem.jsx';
+import Note from './NoteItem.jsx';
 
 class NoteList extends React.Component {
  constructor(props) {
    super(props);
+   this.list = this.list.bind(this);
  }
 list() {
-    console.log('listing list');
-    return this.props.items.map((item, index) => {
-        return <Item task={item.task} notes={item.notes}
-          key={index} index={index}
-          removeTask={this.props.removeTask}/>;
+    return this.props.tasks.map((task) => {
+        return <Note key={task.id} id={task.id} title={task.title} content={task.content}  removeTask={this.props.removeTask}/>;
       });
 }
 
  render() {
-   return <ul>
-       {this.list()}
-     </ul>
+   return <div>
+     <h2>Your task's </h2>
+     <ul>{this.list()} </ul>
+     </div>
  }
 }
 export default NoteList;

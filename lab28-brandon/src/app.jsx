@@ -15,7 +15,7 @@ class App extends React.Component {
  constructor(props) {
    super(props);
    this.state = {
-     title: 'My Routed React App',
+     title: 'Make-A-Task-List App.',
    }
  }
 
