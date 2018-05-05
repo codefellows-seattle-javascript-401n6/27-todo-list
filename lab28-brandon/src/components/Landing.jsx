@@ -7,7 +7,8 @@ class Landing extends React.Component {
 
  render() {
    return <div>
-      <h1>Welcome to my make a list app!!! Please click on the Todo-list tab to start making your list.</h1>
+      <h1>Welcome to "Make-A-List"</h1>
+      <h2>Click on Todo-List to start "Making-A-List"</h2>
    </div>;
  }
 }

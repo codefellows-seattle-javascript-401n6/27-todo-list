@@ -9,13 +9,13 @@ class NoteList extends React.Component {
  }
 list() {
     return this.props.tasks.map((task) => {
-        return <Note key={task.id} id={task.id} title={task.title} content={task.content}  removeTask={this.props.removeTask}/>;
+        return <Note key={task.id} id={task.id} title={"Title: " + task.title} content={"Content: " + task.content}  removeTask={this.props.removeTask}/>;
       });
 }
 
  render() {
    return <div>
-     <h2>Your task's </h2>
+     <h2>Your "List-of-Task's" </h2>
      <ul>{this.list()} </ul>
      </div>
  }
