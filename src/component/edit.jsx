@@ -15,6 +15,7 @@ class EditingView extends React.Component{
     }
     this.handleChange = this.handleChange.bind(this);
     this.submitEdit = this.submitEdit.bind(this);
+    this.cancle = this.cancle.bind(this);
   }
 
 

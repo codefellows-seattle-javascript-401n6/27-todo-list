@@ -9,7 +9,6 @@ class Dashboard extends React.Component{
     super(props);
     this.state = {
       id: '',
-      editing: false, 
       content: '',
       title: '',
     }
@@ -30,24 +29,18 @@ updateTitle(ev){
   this.setState({title:inputTitle});
 }
 
-handleChange(ev){
-  ev.preventDefault();
-  let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
-  this.props.addNote(note);
-  this.setState({
-    title: '',
-    content: ''
-  })
-}
+
 
 handleSubmit(ev) {
   ev.preventDefault();
-  this.props.handleSubmit(this.state);
+  // let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
+  this.props.addNote(note);
+  // this.setState({
+  //   title: '',
+  //   content: ''
+  // })
 }
 
-edit() {
-  the.setState({editing: true})
-}
 
   render(){
     return <div>

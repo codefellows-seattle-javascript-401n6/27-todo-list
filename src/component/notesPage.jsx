@@ -16,7 +16,7 @@ class Notes extends React.Component{
     ]}
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
-    
+    this.updateNote = this.updateNote.bind(this);
  
   }
 
@@ -33,11 +33,19 @@ class Notes extends React.Component{
     this.setState({note: this.state.note});
   }
 
+  
+  updateNote() {
+    let newArray = this.state.notes.slice();
+    newArray[index] = {title, content};
+    this.setState({notes: newArray});
+  }
+
   render(){
     return <div>
       <Dashboard addNote={this.addNote}/>
       <NoteList notes={this.state.notes}
         removeNote={this.removeNote}
+        updateNote={this.updateNote}
       />
       
 

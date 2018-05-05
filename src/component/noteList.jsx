@@ -14,6 +14,7 @@ class NoteList extends React.Component{
       return <Note id={note.id} title={note.title} content={note.content} 
       key={index} index={index} 
       removeNote={this.props.removeNote}
+      updateNote={this.props.updateNote}
       /> 
     });
   }
