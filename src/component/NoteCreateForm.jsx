@@ -5,7 +5,7 @@ import uuid from 'uuid';
 
 
 class Dashboard extends React.Component{
-  constructor(props){
+  constructor(props){ 
     super(props);
     this.state = {
       id: '',
@@ -30,7 +30,7 @@ updateTitle(ev){
   this.setState({title:inputTitle});
 }
 
-handleSubmit(ev) {
+handleChange(ev){
   ev.preventDefault();
   let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
   this.props.addNote(note);
@@ -38,6 +38,11 @@ handleSubmit(ev) {
     title: '',
     content: ''
   })
+}
+
+handleSubmit(ev) {
+  ev.preventDefault();
+  this.props.handleSubmit(this.state);
 }
 
 edit() {

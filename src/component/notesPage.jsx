@@ -35,7 +35,6 @@ class Notes extends React.Component{
 
   render(){
     return <div>
-  
       <Dashboard addNote={this.addNote}/>
       <NoteList notes={this.state.notes}
         removeNote={this.removeNote}

@@ -19,7 +19,7 @@ class Note extends React.Component{
   }
 
   edit() {
-    debugger;
+    
    this.setState({isEditing: !this.state.isEditing});
    console.log('17 testing double click', this.state.isEditing);
   }
