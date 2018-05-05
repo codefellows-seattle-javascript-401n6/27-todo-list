@@ -32,6 +32,8 @@ submit(ev) {
 
  render() {
    return <div>
+     <h1>Start by giving your Task a Title and Content...</h1> 
+     <h2>Then click "Add task"</h2>
       <form onSubmit={this.submit}>
         <input onChange={this.updateTitle} type="text" placeholder="title"/>
         <input onChange={this.updateContent} type="text" placeholder="content"/>

@@ -14,9 +14,7 @@ import './style/main.scss';
 class App extends React.Component {
  constructor(props) {
    super(props);
-   this.state = {
-     title: 'Make-A-Task-List App.',
-   }
+   this.state = {}
  }
 
  render() {

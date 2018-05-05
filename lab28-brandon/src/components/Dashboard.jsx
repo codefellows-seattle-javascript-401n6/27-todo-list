@@ -1,5 +1,4 @@
 import React from 'react';
-import uuidv4 from 'uuidv4';
 
 import NoteItem from './NoteItem.jsx';
 import NoteList from './NoteList.jsx';
