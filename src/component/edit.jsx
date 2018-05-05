@@ -1,6 +1,8 @@
 'use strict';
 import React from 'react';
 import uuid from 'uuid';
+import Note from './note.jsx';
+
 
 
 
@@ -9,7 +11,7 @@ class EditingView extends React.Component{
     super(props);
     this.state = {
       id: '',
-      editing: false, 
+      isEditing: false, 
       content: '',
       title: '',
     }
@@ -44,7 +46,7 @@ submitEdit(ev) {
 }
 
 cancle() { 
-  this.setState({isEditing: !this.state.isEditing});
+  this.props.onEdit();
   console.log('17 testing double click', this.state.isEditing);
  }
 

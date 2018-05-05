@@ -33,12 +33,12 @@ updateTitle(ev){
 
 handleSubmit(ev) {
   ev.preventDefault();
-  // let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
+  let note = {title: this.state.title, content: this.state.content, id: uuid.v1(),}
   this.props.addNote(note);
-  // this.setState({
-  //   title: '',
-  //   content: ''
-  // })
+  this.setState({
+    title: '',
+    content: ''
+  })
 }
 
 

@@ -35,7 +35,8 @@ class Note extends React.Component{
     if (this.state.isEditing) {
       return <Edit title={this.props.title}
         content={this.props.content}
-        onSave={this.save} />
+        onSave={this.save}
+        onEdit={this.edit} />
     }
     return <div onDoubleClick={this.edit}>
         <span>ID:

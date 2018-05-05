@@ -34,7 +34,7 @@ class Notes extends React.Component{
   }
 
   
-  updateNote() {
+  updateNote(index, title, content) {
     let newArray = this.state.notes.slice();
     newArray[index] = {title, content};
     this.setState({notes: newArray});
